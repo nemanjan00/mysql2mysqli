@@ -23,10 +23,19 @@ function mysql_fetch_array($result){
 	return mysqli_fetch_array($result);
 }
 
+function mysql_fetch_row($result){
+	return mysqli_fetch_row($result);
+}
+
 function mysql_num_rows($result){
 	return mysqli_num_rows($result);
 }
 
+function mysql_set_charset($charset){
+	global $_connection;
+
+	return mysqli_set_charset($_connection, $charset);
+}
 
 function mysql_real_escape_string($string){
 	global $_connection;
