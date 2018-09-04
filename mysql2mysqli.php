@@ -76,7 +76,7 @@ if(!function_exists('mysql_insert_id'))
 }
 if(!function_exists('mysql_data_seek'))
 {
-	function mysql_data_seek($db_query, $row_number=0) {
+	function ($db_query, $row_number=0) {
 		return mysqli_data_seek($db_query, $row_number);
 	}
 }
@@ -104,5 +104,11 @@ if(!function_exists('mysql_get_server_info'))
 	function mysql_get_server_info() {
 		global $_mysql_connect;
 		return mysqli_get_server_info($_mysql_connect);
+	}
+}
+if(!function_exists('mysql_close'))
+{
+	function mysql_close($_mysql_connect) {
+		return mysqli_close($_mysql_connect);
 	}
 }
